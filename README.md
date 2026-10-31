@@ -1,51 +1,52 @@
-Google AI Agents Intensive Portfolio - Aman Atar
-This repository contains my capstone projects developed during the 5-Day AI Agents Intensive Course by Google and Kaggle. These projects demonstrate the use of the Google Agent Development Kit (ADK) to build autonomous, multi-agent systems.
+# Autonomous Multi-Agent Systems: Google ADK & The Alpha Seeker
 
-🚀 Featured Projects
-1. The Alpha Seeker (Autonomous Trading Agent)
-An advanced trading system that coordinates a team of specialized agents to develop and validate investment strategies.
+<div align="center">
 
-Architecture: Uses a SequentialAgent to manage the high-level workflow.
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Google ADK](https://img.shields.io/badge/Google-Agent_Development_Kit-4285F4?logo=google&logoColor=white)](https://github.com/google/agent-development-kit)
+[![Gemini](https://img.shields.io/badge/Gemini-2.0_Flash-8E75C2?logo=google-gemini&logoColor=white)](https://deepmind.google/technologies/gemini/)
 
-Parallel Processing: A ParallelAgent (QuantTeam) simultaneously fetches market data and technical indicators.
+</div>
 
-Risk Management: Implements a LoopAgent that forces the strategy to be refined until it meets specific risk criteria (Drawdown < 15%).
+Autonomous multi-agent architectures built for the **Google AI Agents Intensive** capstone competition on Kaggle, coordinating specialized LLM agents for quantitative financial research and automated market signal validation.
 
-Cross-Agent Communication: Utilizes RemoteA2aAgent to connect the developer to a remote backtesting service.
+---
 
-2. Advanced Research Assistant
-A multi-agent research pipeline designed to analyze complex topics from multiple perspectives.
+## Systems Architecture
 
-Specialist Agents: Coordinates TechResearcher and FinanceResearcher agents.
+### 1. The Alpha Seeker: Autonomous Trading Agent (`03-alpha-seeker-trading-agent/`)
+- **Multi-Agent Coordination:** Implements sequential, parallel, and feedback-loop agent topologies using the **Google Agent Development Kit (ADK)**:
+  - *Macro Analyst Agent:* Ingests financial headlines, interest rate decisions, and broad market sentiment.
+  - *Technical Valuation Agent:* Queries real-time price feeds via `yfinance`, calculating momentum, moving average crosses, and volatility regime shifts.
+  - *Risk Governor Agent:* Enforces mandatory capital preservation rules (maximum drawdown limit < 15%, position sizing constraints).
+  - *Synthesis Agent:* Aggregates multi-agent votes into a final risk-adjusted portfolio recommendation.
 
-Tool Integration: Uses Google Search for real-time data gathering.
+### 2. Advanced Multi-Turn Research Assistant (`02-advanced-research-assistant/`)
+- **Automated Evidence Synthesizer:** Multi-agent pipeline equipped with web retrieval, cross-source verification, and structured synthesis.
 
-Agent-to-Agent (A2A): Features a dedicated MathAgent exposed as an A2A service on port 8001 for financial calculations.
+---
 
-3. Iterative Content Creator
-A content generation pipeline that mimics a professional editorial team.
+## Setup & Running
 
-Workflow: InitialWriterAgent → CriticAgent → RefinerAgent.
+```bash
+git clone https://github.com/Amanatar/google-ai-agents-intensive.git
+cd google-ai-agents-intensive
 
-Iterative Refinement: Uses a LoopAgent to automatically critique and rewrite content (up to 3 iterations) until it is "APPROVED".
+python -m venv .venv
+# Activate virtual environment:
+# Linux/macOS: source .venv/bin/activate
+# Windows: .venv\Scripts\activate
 
-Custom Tools: Implements a FunctionTool (exit_loop) to programmatically stop the agentic loop.
+pip install -r requirements.txt
+```
 
-🛠️ Technology Stack
-Framework: Google Agent Development Kit (ADK).
+Launch Jupyter or execute notebooks directly:
+```bash
+jupyter notebook 03-alpha-seeker-trading-agent/the-alpha-seeker-autonomous-trading-agent-adk.ipynb
+```
 
-Model: Gemini 2.5 Flash Lite.
+---
 
-Environment: Python, Jupyter Notebooks, Kaggle.
-
-📋 How to Run
-Install ADK:
-
-Bash
-
-pip install google-adk
-Set API Key: Ensure your GOOGLE_API_KEY is set in your environment variables.
-
-Run Notebooks: Open the .ipynb files in a Jupyter environment and execute the cells.
-
-Certified on: December 18, 2025
+## License
+MIT License. Copyright 2026 Aman Atar.
