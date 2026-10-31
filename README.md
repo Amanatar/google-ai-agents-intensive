@@ -2,6 +2,7 @@
 
 <div align="center">
 
+[![CI Verified](https://github.com/Amanatar/google-ai-agents-intensive/actions/workflows/ci-verify.yml/badge.svg)](https://github.com/Amanatar/google-ai-agents-intensive/actions)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Google ADK](https://img.shields.io/badge/Google-Agent_Development_Kit-4285F4?logo=google&logoColor=white)](https://github.com/google/agent-development-kit)
